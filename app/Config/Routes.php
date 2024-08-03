@@ -6,34 +6,37 @@ $routes->group('', ['filter' => 'cors'], static function (RouteCollection $route
 
     // Para las materias
     $routes->get('api/materia','MateriaController::index');
-    $routes->get('api/materia/(:num)','MateriaController::show');
+    $routes->get('api/materia/(:num)','MateriaController::show/$1');
+    
     $routes->post('api/materia/','MateriaController::create');
     $routes->options('api/materia', 'CorsController::handleOptions');
-    $routes->put('api/materia/(:num)','MateriaController::update');
+    
+    $routes->put('api/materia/(:num)','MateriaController::update/$1');
     $routes->options('api/materia/(:num)', 'CorsController::handleOptions');
-    $routes->delete('api/materia/(:num)','MateriaController::delete');
+    
+    $routes->delete('api/materia/(:num)','MateriaController::delete/$1');
     $routes->options('api/materia/(:num)', 'CorsController::handleOptions');
 
     // Para los tipos de Actividad
     
     $routes->get('api/tipoActividad','TipoActividadController::index');
-    $routes->get('api/tipoActividad/(:num)','TipoActividadController::show');
+    $routes->get('api/tipoActividad/(:num)','TipoActividadController::show/$1');
     $routes->post('api/tipoActividad/','TipoActividadController::create');
     $routes->options('api/tipoActividad', 'CorsController::handleOptions');
-    $routes->put('api/tipoActividad/(:num)','TipoActividadController::update');
+    $routes->put('api/tipoActividad/(:num)','TipoActividadController::update/$1');
     $routes->options('api/tipoActividad/(:num)', 'CorsController::handleOptions');
-    $routes->delete('api/tipoActividad/(:num)','TipoActividadController::delete');
+    $routes->delete('api/tipoActividad/(:num)','TipoActividadController::delete/$1');
     $routes->options('api/tipoActividad/(:num)', 'CorsController::handleOptions');
 
 
     // Para las actividades
     $routes->get('api/actividad','ActividadController::index');
-    $routes->get('api/actividad/(:num)','ActividadController::show');
+    $routes->get('api/actividad/(:num)','ActividadController::show/$1');
     $routes->post('api/actividad/','ActividadController::create');
     $routes->options('api/actividad', 'CorsController::handleOptions');
-    $routes->put('api/actividad/(:num)','ActividadController::update');
+    $routes->put('api/actividad/(:num)','ActividadController::update/$1');
     $routes->options('api/actividad/(:num)', 'CorsController::handleOptions');
-    $routes->delete('api/actividad/(:num)','ActividadController::delete');
+    $routes->delete('api/actividad/(:num)','ActividadController::delete/$1');
     $routes->options('api/actividad/(:num)', 'CorsController::handleOptions');
 
 

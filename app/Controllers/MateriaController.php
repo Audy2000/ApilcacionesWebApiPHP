@@ -15,7 +15,9 @@ class MateriaController extends ResourceController
     
     public function show($id = null)
     {
-        $data = $this->model->find($id);
+            $data = $this->model->find($id);
+        
+
         if ($data) {
             return $this->respond($data);
         } else {
