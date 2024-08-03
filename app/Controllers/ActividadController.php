@@ -43,6 +43,8 @@ class ActividadController extends ResourceController
     public function create()
     {
         $data = $this->request->getJSON();
+         
+        //return $data;
         if ($this->model->insert($data)) {
             return $this->respondCreated($data);
         } else {
